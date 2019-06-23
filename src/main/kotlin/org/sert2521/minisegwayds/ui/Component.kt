@@ -6,6 +6,11 @@ abstract class Component {
     var width = 0f
     var height = 0f
 
+    var marginLeft = 0f
+    var marginTop = 0f
+    var marginRight = 0f
+    var marginBottom = 0f
+
     var backgroundColor = Color(255f, 255f, 255f, 255f)
     var borderColor = Color(0f, 0f, 0f, 0f)
 
