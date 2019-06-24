@@ -4,27 +4,21 @@ import org.sert2521.minisegwayds.ui.*
 import processing.core.PApplet
 
 val ui = ui(Box()) {
-    width = 640f
-    height = 480f
-    paddingLeft = 10f
-    paddingTop = 10f
-    paddingRight = 10f
-    paddingBottom = 10f
-    displayDirection = DisplayDirection.VERTICAL
-    autoSpacing = true
+    width = Measurement(Units.PIXELS, 640f)
+    height = Measurement(Units.PIXELS, 480f)
     box {
-        width = 100f
-        height = 100f
+        width = Measurement(Units.PERCENT, 10f)
+        height = Measurement(Units.PERCENT, 10f)
         backgroundColor = Color(255f, 0f, 0f, 255f)
     }
     box {
-        width = 100f
-        height = 100f
+        width = Measurement(Units.PERCENT, 40f)
+        height = Measurement(Units.PERCENT, 40f)
         backgroundColor = Color(0f, 255f, 0f, 255f)
     }
     box {
-        width = 100f
-        height = 100f
+        width = Measurement(Units.PERCENT, 50f)
+        height = Measurement(Units.PERCENT, 50f)
         backgroundColor = Color(0f, 0f, 255f, 255f)
     }
 }
