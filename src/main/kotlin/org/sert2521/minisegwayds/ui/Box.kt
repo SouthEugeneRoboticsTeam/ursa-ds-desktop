@@ -12,6 +12,9 @@ open class Box : Component() {
     var paddingRight = 0f
     var paddingBottom = 0f
 
+    var spacing = 0f
+    var autoSpacing = false
+
     fun add(component: Component) {
         children.add(component)
     }
@@ -22,6 +25,17 @@ open class Box : Component() {
         applet.rect(x, y, width, height)
         var xOffset = x + paddingLeft
         var yOffset = y + paddingTop
+        val spacing = if (autoSpacing) {
+            if (displayDirection == DisplayDirection.HORIZONTAL){
+                var childSpace = 0f
+                children.forEach { childSpace += it.width + it.marginLeft + it.marginRight }
+                ((width - paddingLeft - paddingRight) - childSpace) / (children.size - 1)
+            } else {
+                var childSpace = 0f
+                children.forEach { childSpace += it.height + it.marginTop + it.marginBottom }
+                ((height - paddingTop - paddingBottom) - childSpace) / (children.size - 1)
+            }
+        } else spacing
         children.forEach {
             if (displayDirection == DisplayDirection.HORIZONTAL) {
                 xOffset += it.marginLeft
@@ -30,9 +44,9 @@ open class Box : Component() {
             }
             it.render(applet, xOffset, yOffset)
             if (displayDirection == DisplayDirection.HORIZONTAL) {
-                xOffset += it.width + it.marginRight
+                xOffset += it.width + it.marginRight + spacing
             } else {
-                yOffset += it.height + it.marginBottom
+                yOffset += it.height + it.marginBottom + spacing
             }
         }
     }

@@ -6,21 +6,23 @@ import processing.core.PApplet
 val ui = ui(Box()) {
     width = 640f
     height = 480f
+    paddingLeft = 10f
     paddingTop = 10f
-    paddingLeft = 100f
+    paddingRight = 10f
+    paddingBottom = 10f
+    displayDirection = DisplayDirection.VERTICAL
+    autoSpacing = true
     box {
         width = 100f
         height = 100f
         backgroundColor = Color(255f, 0f, 0f, 255f)
     }
     box {
-        marginLeft = 30f
         width = 100f
         height = 100f
         backgroundColor = Color(0f, 255f, 0f, 255f)
     }
     box {
-        marginLeft = 30f
         width = 100f
         height = 100f
         backgroundColor = Color(0f, 0f, 255f, 255f)
