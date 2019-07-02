@@ -15,7 +15,8 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    //compile("org.openjfx", "javafx", "11", ext = "pom")
+    compile("com.jfoenix", "jfoenix", "8.0.8")
+    compile("org.openjfx", "javafx", "11", ext = "pom")
     compile("no.tornado", "tornadofx", "1.7.19")
 }
 

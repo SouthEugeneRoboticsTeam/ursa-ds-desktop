@@ -6,7 +6,7 @@ import javafx.scene.paint.Color
 import tornadofx.*
 
 class MainView : View("URSA Driver Station") {
-    override val root = hbox {
-
+    override val root = borderpane {
+        top<StatusBar>()
     }
 }
